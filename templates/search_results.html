@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Search Results</h1>
+
+    <div>
+        {% if results %}
+            <h2>Results for "{{ query }}"</h2>
+            <ul>
+                {% for timestamp in results %}
+                    <li>{{ timestamp }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found for "{{ query }}".</p>
+        {% endif %}
+    </div>
+{% endblock %}
